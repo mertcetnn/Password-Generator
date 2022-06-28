@@ -9,21 +9,20 @@ var specialc = ["!#$%&'()*+,-./:;<=>?@[]^_`{|}~"];
 function generatePassword() {
   var password = "";
   var pwdCases = "";
-1  //creates prombts
- let passwordLength = prompt("How many character would you like to use in your password? (min:8 ,max:128!)")
+1  //creates prompts
+ let passwordLength = parseInt(prompt("How many character would you like to use in your password? (min:8 ,max:128!)"))
 
   if (passwordLength < 8) {
-    window.alert("Password can not be less than 7 characters.");
-  };
+    parseInt(prompt("Password can not be less than 7 characters."));
+  }
 
   if (passwordLength > 128) 
-    {window.alert("Password can not be more than 128 characters.")
+    {parseInt(prompt("Password can not be more than 128 characters."));
+    
 };
 
 
 
-
-  
   //true and false confirms
   let lowerCaseConfirm = confirm("Would you like to use LowerCase characters?");
   if (lowerCaseConfirm) {
@@ -48,9 +47,10 @@ if (specialcConfirm){
 }else{
   } 
 
-  
 return password
 }
+generatePassword();
+
 
 
 
