@@ -3,41 +3,44 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   // // Arrays of Possible Character Choices
-
-  let values
-   lowerCase = ["abcdefghijklmnopqrstuvwxyz"],
-   upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
-   numeric = ["0123456789"],
-   specialc = ["!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"];
-   let password ="";
+  var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
+  var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+  var numeric = ["0123456789"];
+  var specialc = ["!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"];
+  var characters=""
 
 
-   for (var i =0; i<=complexity; i++){
-    password=password + values.chartAt(Math.floor(Math.random()*Math.floor(value.length-1)));
-   }
+  while (characters === "") {
+    if (window.confirm("Would you like to confirm lowercase characters?")) {
+      characters += lowerCase
+    }
+    if (window.confirm("Would you like to confirm uppercase characters?")) {
+      characters += upperCase
+    }
+    if (window.confirm("Would you like to add number?")) {
+      characters += numeric
+    
+    }
+    if (confirm("Would you like to use special characters?")) {
+      characters += specialc
+    }
   
 
-
-
-}
-
-
-
   var password = ""
-  var numberofcharacters = 0
+
   while (numberofcharacters < 8 || numberofcharacters > 128) {
     numberofcharacters = Number(prompt("Choose  Password  8 to 128"))
   }
-  for (let i = 0; i < numberofcharacters; i++) {
-    var index = Math.floor(Math.random() * characters.length)
-    password = + characters[index]
+  for (let i = 0; i < generatePassword; i++) {
+    var index = Math.floor(Math.random() * generatePassword.length)
+    password +=  characters[i]
 
 
   }
   return password
 
-
-
+}
+}
 
 
 // Write password to the #password input
