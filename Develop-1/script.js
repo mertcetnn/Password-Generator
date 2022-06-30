@@ -1,58 +1,52 @@
-// creting arrays
-var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
-var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-var numeric = ["0123456789"];
-var specialc = ["!#$%&'()*+,-./:;<=>?@[]^_`{|}~"];
 
 
 // Assignment code here
-function generatePassword() {
-  var password = "";
-  var pwdCases = "";
-1  //creates prompts
- let passwordLength = parseInt(prompt("How many character would you like to use in your password? (min:8 ,max:128!)"))
+function generatePassword(password) {
+// creting arrays
+var lowerCase = "abcdefghijklmnopqrstuvwxyz"
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var numeric = "0123456789"
+var specialc = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"
+var character=""
 
-  if (passwordLength < 8) {
-    parseInt(prompt("Password can not be less than 7 characters."));
-  }
-
-  if (passwordLength > 128) 
-    {parseInt(prompt("Password can not be more than 128 characters."));
-    
-};
-
-
-
+while(character === ""){ 
   //true and false confirms
-  let lowerCaseConfirm = confirm("Would you like to use LowerCase characters?");
-  if (lowerCaseConfirm) {
-    pwdCases += lowerCase;
-  } ;
-let upperCaseConfirm= confirm("Would you like to use UpperCase characters?");
- if (upperCaseConfirm ){
-  pwdCases=+upperCase;
- }else{
-  }
+  if (confirm("Would you like to use LowerCase characters?"))
+   character+= lowerCase;}
+if (!lowerCase){alert("You must chose at least one")};
+ 
+  if (confirm("Would you like to use UpperCase characters?")){
+    character += upperCase; };
+  if(!upperCase){ alert("You must chose at least one")}
+
+
+
+ if(confirm("Would you like to see more numbers in your password?"));{
+    character += numeric;};
+    if(!numericConfirm){ alert("You must chose at least one")}
+
+
+    
+ if( confirm("would you like to add some special characters?")) {
+    character += specialc;};
+    if (!specialcConfirm){alert("You must chose at least one")}
   
-  ;
-let numericConfirm= confirm("Would you like to see more numbers in your password?");
-if(numericConfirm){
-  pwdCases+=numeric;
-}else{
+  
   }
-  ;
-let specialcConfirm= confirm("would you like to add some special characters?")
-if (specialcConfirm){
-  pwdCases=specialc;
-}else{
-  } 
 
-return password
-}
-generatePassword();
+  var passwordS= ""
+  var numberofcharacters=0
 
+  while(numberofcharacters<8 || numberofcharacters>128){
+    numberofcharacters=Number(parseInt(prompt("number of characters? Choose between 8 to 128!")))
+  }
+  for (let i=0; i<numberofcharacters; i++){
+    var index =Math.floor(Math.random()*character.length)
+    passwordS += character[index]
 
+  return password;
 
+  }
 
 
 
