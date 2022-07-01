@@ -9,15 +9,19 @@ function generatePassword() {
   var specialc = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"
   var character = ""
 
-  while (character === "" )  {
+  while (character === "") {
     //true and false confirms
     if (confirm("Would you like to use LowerCase characters?")) {
       character += lowerCase
+      
+      
     }
+  
 
     if (confirm("Would you like to use UpperCase characters?")) {
       character += upperCase
     }
+  
 
 
 
@@ -30,8 +34,11 @@ function generatePassword() {
     if (confirm("would you like to add some special characters?")) {
       character += specialc
     }
+    if (character=false){
+    function character(){alert("You need to add at least one option.!")}}
+  
   }
- 
+
 
   //adjsuting character number amount of password
  
@@ -41,11 +48,11 @@ function generatePassword() {
   }
 
   // using one character each time
-  var passwordS = ""
+  var password = ""
 
   for (let i = 0; i < numberofcharacters; i++) {
-    passwordS += Math.floor(Math.random() * character.length)
-    passwordS += character
+    var index= Math.floor(Math.random() * character.length)
+    password += character[index]
 
     return password
 
