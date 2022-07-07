@@ -79,13 +79,16 @@ else if(specialConfirm&&upperConfirm){
 
 
   // using one character each time
-password=[];
+   Lastpassword=[];
 
   for (let i = 0; i < numberofcharacters; i++) {
-    totalchoices = choices[Math.floor(Math.random() * choices.length)];
-    password.push (totalchoices);
+    var totalchoices = choices[Math.floor(Math.random() * choices.length)];
+   Lastpassword.push(choices);
 
-    var strpsw= password.join("");
+    var stringpsw= Lastpassword.join("");
+    document.getElementById("password").textContent=stringpsw
+
+    
 
     return generatePassword
    
