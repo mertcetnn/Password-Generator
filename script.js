@@ -16,7 +16,6 @@ window.onload = alert("Welcome! Please click 'Generate password' to start!");
 var generatePassword = function () {
   //declare chars
   var allChars = [];
-  var password = ""
   //adjsuting character number amount of password
 
   var numberofcharacters = 0
@@ -34,90 +33,65 @@ var generatePassword = function () {
     return generatePassword()
   }
   //posibilties
-  //positives if 1 of them true
+  //positives if 3 of them true
   else if (lowerConfirm && upperConfirm && numeric) {
-    choices = lowerCase.concat(upperCase, numeric)
+    choices = lowerCase.concat(upperCase, numeric);
   } else if (lowerConfirm && upperConfirm && specialConfirm) {
-    choices = lowerCase.concat(upperCase, specialc)
+    choices = lowerCase.concat(upperCase, specialc);
   } else if (lowerConfirm && numberConfirm && specialc) {
-    choices = lowerCase.concat( numeric, specialc)
+    choices = lowerCase.concat( numeric, specialc);
   } else if (upperConfirm && numeric && specialc) {
-    choices = upperCase.concat( numeric, specialc)
+    choices = upperCase.concat( numeric, specialc);
   }
 
   //if 2 of them true
 
-  else if (lowerConfirm && upperConfirm) {
-    choices =
-
+  else if (lowerConfirm && numberConfirm) {
+    choices =lowerCase.concat(numeric);
 }
-
-
-
-
-
-  // else if 1 one of them false
-  else if (!lowerConfirm && upperConfirm && numberConfirm && specialConfirm) { //1
-    choices = lowerCase.concat(upperCase, specialc, numberConfirm);
+else if (lowerConfirm&&specialConfirm){
+  choices=lowerCase.concat(specialc);
+}
+else if (lowerConfirm&&upperConfirm){
+  choices=lowerCase.concat(upperCase);
+}
+else if( specialConfirm&&numberConfirm){
+  choices=specialc.concat(numeric)
+}
+else if(specialConfirm&&upperConfirm){
+  choices=specialc.concat}
+  else if(upperConfirm&&numberConfirm){
+    choices=upperCase.concat(numeric)
   }
-  else if (!upperConfirm && lowerConfirm && numberConfirm && specialConfirm) {   //2
-    choices = upperCase.concat(lowerCase, numeric, specialc);
+  //if 1 of them true
+  else if(lowerConfirm){
+    choices=lowerCase
   }
-  else if (!numberConfirm && lowerConfirm && upperConfirm && specialConfirm) {//3
-    choices = numeric.concat(lowerCase, upperCase, specialc);
+  else if(upperConfirm){
+    choices=upperCase
   }
-  else if (!specialConfirmz && lowerConfirm && upperConfirm && numberConfirm) {//4
-    choices = specialc.concat(lowerCase, upperCase, numeric);
+  else if(numberConfirm){
+    choices=numeric
   }
-  //else if 2 of them false
-  else if (!lowerConfirm && !upperConfirm && numberConfirm && specialConfirm) {   //1-2
-    choices = lowerCase, upperCase.concat(numeric, specialc);
+  else if(specialConfirm){
+    choices=specialc
   }
-  else if (lowerConfirm && upperConfirm && !numberConfirm && !specialConfirm) {   //1-4
-    choices = numeric, specialc.concat(lowerCase, upperCase);
-  } else if (!lowerConfirm && upperConfirm && !numberConfirm && specialConfirm) {     //1-3
-    choices = lowerCase, numeric.concat(upperCase, specialc);
-  }
-  else if (lowerConfirm && !upperConfirm && numberConfirm && !specialConfirm) { //2-4
-    choices = upperCase, specialc.concat(lowerCase, numeric);
-  }
-  // else if 3 of them false
-
-  else if (!lowerConfirm && !upperConfirm && !numberConfirm && specialConfirm) { // 1-2-3
-    choices = lowerCase, upperCase, numberConfirm.concat(specialc);
-  }
-  else if (!lowerConfirm && !upperConfirm && numberConfirm && !specialConfirm) {//1-2-4
-    choices = lowerCase, upperCase, specialc.concat();
-  }
-  else if (!lowerConfirm && upperConfirm && !numberConfirm && !specialConfirm) {//1-3-4
-    choices = lowerCase, numeric, specialc.concat(upperCase);
-  }
-  else if (lowerConfirm && !upperConfirm && !numberConfirm && !specialConfirm) {//2-3-4
-    choices = lowerCase.concat(upperCase, numeric, specialc);
-  }
-  else if (!lowerConfirm && !upperConfirm && numberConfirm && !specialConfirm) {//2-4-1
-    choices = numberConfirm.concat(lowerCase, upperCase, specialc);
-  }
-
-
-
-
-
-
 
 
   // using one character each time
-
+password=[];
 
   for (let i = 0; i < numberofcharacters; i++) {
-    var index = Math.floor(Math.random() * allChars.length)
-    password += allChars[random];
+    totalchoices = choices[Math.floor(Math.random() * choices.length)];
+    password.push (totalchoices);
+
+    var strpsw= password.join("");
 
     return generatePassword
-
+   
 
   }
-}}
+}
 
 
 
